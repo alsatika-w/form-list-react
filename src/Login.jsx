@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ function Login() {
     });
 
     const [errors, setErrors] = useState({});
+
+    const navigate = useNavigate()
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -23,6 +26,7 @@ function Login() {
 
         if (Object.keys(newErrors).length === 0) {
             console.log('Form submitted successfully');
+            navigate('/Form')
         } else {
             console.log('Form submitted failed due to validation errors');
         }
