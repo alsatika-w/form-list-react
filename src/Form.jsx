@@ -25,6 +25,10 @@ const Form = () => {
     setForm(initialFormState);
   };
 
+// const handleSelectedTodoForEdit = (todo) => {
+//     this.setState({ form: todo });
+//   };
+
   const [registrations, setRegistrations] = useState([]);
 
   const addRegistration = (registration) => {
@@ -33,68 +37,74 @@ const Form = () => {
 
 
   return (
-      <div className="form d-flex justify-content-center align-items-center">
+    <div className='container'>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label className="form-label">Nama:</label>
+        <h2>Biodata Form</h2>
+
+            <label className="form-label">FullName</label>
             <input
               type="text"
               className="form-control"
               name="name"
+              placeholder='Enter your name'
               value={form.name}
               onChange={handleChange}
               required
-            />
-          </div>
+              />
+        
           <div className="mb-3">
-            <label className="form-label">Jurusan:</label>
+            <label className="form-label">Major</label>
             <input
               type="text"
               className="form-control"
               name="major"
+              placeholder='Enter your major'
               value={form.major}
               onChange={handleChange}
               required
-            />
+              />
           </div>
           <div className="mb-3">
-            <label className="form-label">Usia:</label>
+            <label className="form-label">Age</label>
             <input
-              type="number"
+              type="text"
               className="form-control"
               name="age"
+              placeholder='Enter your age'
               value={form.age}
               onChange={handleChange}
               required
-            />
+              />
           </div>
           <div className="mb-3">
-            <label className="form-label">Hobi:</label>
+            <label className="form-label">Your Hobby</label>
             <input
               type="text"
               className="form-control"
               name="hobby"
+              placeholder='Enter your hobby'
               value={form.hobby}
               onChange={handleChange}
               required
-            />
+              />
           </div>
           <div className="mb-3">
-            <label className="form-label">Motivasi:</label>
+            <label className="form-label">Motivation</label>
             <textarea
               className="form-control"
               name="motivation"
+              placeholder='Enter your motivation for joining this organization'
               value={form.motivation}
               onChange={handleChange}
               required
-            />
+              />
           </div>
-          <button className="btn btn-primary" type="submit">Submit</button>
+          <button className="button" type="submit">Register</button>
         </form>
         <List
         registrations={registrations}
         />
-      </div>
+        </div>
   );
 };
 

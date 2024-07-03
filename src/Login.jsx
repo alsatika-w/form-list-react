@@ -47,6 +47,8 @@ function Login() {
     };
 
     return (
+        <div className="container">
+
         <div className="form-container">
             <form onSubmit={handleSubmit}>
             <div className="imgcontainer">
@@ -61,7 +63,7 @@ function Login() {
                         placeholder='Enter username'
                         value={formData.username}
                         onChange={handleChange}
-                    />
+                        />
                     {errors.username && (
                         <span className="error-message">{errors.username}</span>
                     )}
@@ -75,7 +77,7 @@ function Login() {
                         placeholder='Enter your password'
                         value={formData.password}
                         onChange={handleChange}
-                    />
+                        />
                     {errors.password && (
                         <span className="error-message">{errors.password}</span>
                     )}
@@ -85,6 +87,7 @@ function Login() {
                 </button>
             </form>
         </div>
+    </div>
     );
 }
 
